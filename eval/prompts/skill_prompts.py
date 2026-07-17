@@ -9,6 +9,7 @@ GENERATE_SKILL_PROMPT = """You are a skilled AI agent architect. Analyze the tra
 2. **Keep It General**: Use placeholders like `[TARGET]`, `[QUERY]` instead of specific values. The skill should apply to similar problems, not just this one.
 3. **Capture Executable Knowledge**: When the trajectory includes effective code, extract the core logic as a reusable template. Good code templates are worth more than paragraphs of description.
 4. **Brevity Matters**: Aim for ~600 words. Focus on what's actionable.
+5. **Ground Decisions in Visual Evidence**: Preserve reusable rules for where to inspect, what observation confirms a hypothesis, when zooming is necessary, and when enough evidence has been collected to stop. Never copy ground-truth coordinates into the skill.
 
 ### Output Structure:
 ```
@@ -32,6 +33,13 @@ version: 1.0.0
 1. **[Phase Name]**: [Action and rationale]
 2. **[Phase Name]**: [Action and rationale]
 3. ...
+
+## Evidence and Stopping Rules
+- **Evidence target**: [what visible cue must be found]
+- **Zoom trigger**: [when the global view is insufficient]
+- **Positive evidence**: [what observation supports an answer]
+- **Absence evidence**: [what search coverage is required before concluding the target is absent]
+- **Stop condition**: [when further visual actions are redundant]
 
 ## Tool Templates
 (Include only if the trajectory contained useful code or query patterns)
@@ -142,5 +150,4 @@ Output ONLY the refined SKILL.md starting with `---`. No preamble.
 {skill_content}
 </current_skill>
 """
-
 

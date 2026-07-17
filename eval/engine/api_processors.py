@@ -137,6 +137,8 @@ def _initialize_sample_and_image(sample, args, save_dir):
         "initial_prompt": question,
         "ground_truth": ground_truth
     }
+    if sample.get("evidence"):
+        initial_traj_info["evidence"] = sample["evidence"]
     save_trajectory(save_dir,initial_traj_info)
     
     # Parse and load multiple images

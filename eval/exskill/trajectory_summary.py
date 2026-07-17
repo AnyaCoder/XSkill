@@ -328,6 +328,7 @@ def _load_metadata(traj_paths: Union[str, List[str]], sample_dir: str) -> dict:
     paths = _normalize_traj_paths(traj_paths)
     question = None
     ground_truth = None
+    evidence = None
     
     # Try to load from first trajectory file
     if paths:
@@ -336,6 +337,7 @@ def _load_metadata(traj_paths: Union[str, List[str]], sample_dir: str) -> dict:
                 first = json.loads(next(f))
                 question = first.get("initial_prompt")
                 ground_truth = first.get("ground_truth")
+                evidence = first.get("evidence")
         except Exception:
             pass
     
@@ -363,6 +365,7 @@ def _load_metadata(traj_paths: Union[str, List[str]], sample_dir: str) -> dict:
     return {
         "question": question,
         "ground_truth": ground_truth,
+        "evidence": evidence,
         "system_prompt": system_prompt_text
     }
 
@@ -405,6 +408,7 @@ def summarize_rollouts(traj_paths: Union[str, List[str]], llm: ExperienceLLM, sa
     metadata = _load_metadata(uniq_paths, resolved_sample_dir)
     question = metadata.get("question")
     ground_truth = metadata.get("ground_truth")
+    evidence = metadata.get("evidence")
     system_prompt_text = metadata.get("system_prompt")
     
     # Scan all images in the directory
@@ -527,7 +531,10 @@ def summarize_rollouts(traj_paths: Union[str, List[str]], llm: ExperienceLLM, sa
         process_text = "\n\n".join(header_parts) + "\n\n" + process_text
     
     # Generate summary (always include ground truth context if available)
-    prompt = SINGLE_ROLLOUT_SUMMARY.format(trajectory=process_text)
+    prompt = SINGLE_ROLLOUT_SUMMARY.format(
+        trajectory=process_text,
+        evidence=json.dumps(evidence, ensure_ascii=False) if evidence else "Not provided",
+    )
     
     # Find question images (top-level original_image files)
     question_images = []

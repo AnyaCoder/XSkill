@@ -1,6 +1,8 @@
 # Prompt 1: Summarizes a single trajectory, focusing on tool usage and reasoning.
 SINGLE_ROLLOUT_SUMMARY = """You are a World-Class reasoning analysis expert. A multimodal agent system uses tool-based visual reasoning to solve the given problem. The agent may have been provided with some experiences and skill guidance. Please summarize the following trajectory (also called rollout) step-by-step:
 
+Ground-truth visual evidence metadata may be provided for offline skill learning. Use it only to evaluate whether the agent inspected the relevant region. Never copy exact coordinates or sample-specific object names into reusable advice.
+
 1. For each turn or step:
    1.1 Describe which tool was used and with what parameters, explain the reasoning for this specific action, and note which experience (if any) and which skill guidance (if any) were applied and how they influenced the action.
    1.2 If this turn was part of meta-reasoning skills: identify the meta-reasoning type (e.g., question decomposition, sequential reflection, self-correction, self-verification, etc.) and explain how its outcome influenced subsequent steps or the final result.
@@ -14,9 +16,17 @@ SINGLE_ROLLOUT_SUMMARY = """You are a World-Class reasoning analysis expert. A m
    - For intermediate images that were generated and used: identify which visual features were extracted and how they can help the agent to reason better.
    - Suggest specific visual operations that could improve reasoning. If no intermediate images were generated and used in some rollout steps, but could have been helpful, note this as a potential point of improvement.
 
+5. Evidence and stopping analysis:
+   - State whether the trajectory inspected the relevant visual evidence, missed it, or stopped before sufficient evidence was collected.
+   - Identify the positive observation that justified the answer, or the search coverage needed before concluding that evidence was absent.
+
 <trajectory>
 {trajectory}
 </trajectory>
+
+<evidence_metadata>
+{evidence}
+</evidence_metadata>
 
 Provide a clear, structured summary of the trajectory."""
 
@@ -152,4 +162,3 @@ These experiences highlight common patterns and pitfalls. When you encounter mat
 
 Your instruction is following:
 """
-
