@@ -239,10 +239,19 @@ def save_knowledge_snapshot(args, batch_idx):
     
     snapshot_dir = os.path.join(args.output_dir, "snapshots", f"batch_{batch_idx:03d}")
     os.makedirs(snapshot_dir, exist_ok=True)
+    metadata_path = os.path.join(snapshot_dir, "metadata.json")
+    if os.path.exists(metadata_path):
+        return snapshot_dir
     
     metadata = {
         "batch_idx": batch_idx,
         "timestamp": datetime.now().isoformat(),
+        "experience_exists": bool(
+            args.experience_library and os.path.exists(args.experience_library)
+        ),
+        "skill_exists": bool(
+            getattr(args, 'skill_library', None) and os.path.exists(args.skill_library)
+        ),
     }
     
     # Snapshot experience library: copy if source exists, then count from snapshot file
@@ -280,10 +289,69 @@ def save_knowledge_snapshot(args, batch_idx):
         metadata["skill_word_count"] = 0
     
     # Save metadata
-    with open(os.path.join(snapshot_dir, "metadata.json"), 'w', encoding='utf-8') as f:
+    with open(metadata_path, 'w', encoding='utf-8') as f:
         json.dump(metadata, f, ensure_ascii=False, indent=2)
     
     print(f"  [Snapshot] Saved batch_{batch_idx:03d} snapshot (exp: {metadata['experience_count']}, skill: {metadata['skill_word_count']} words)")
+    return snapshot_dir
+
+
+def restore_knowledge_snapshot(args, batch_idx):
+    """Restore an interrupted batch to its immutable pre-batch knowledge state."""
+    import shutil
+
+    snapshot_dir = os.path.join(args.output_dir, "snapshots", f"batch_{batch_idx:03d}")
+    metadata_path = os.path.join(snapshot_dir, "metadata.json")
+    if not os.path.exists(metadata_path):
+        return False
+
+    with open(metadata_path, 'r', encoding='utf-8') as f:
+        metadata = json.load(f)
+
+    artifacts = (
+        (
+            getattr(args, 'experience_library', None),
+            os.path.join(snapshot_dir, "experiences.json"),
+            metadata.get(
+                "experience_exists",
+                os.path.exists(os.path.join(snapshot_dir, "experiences.json")),
+            ),
+        ),
+        (
+            getattr(args, 'skill_library', None),
+            os.path.join(snapshot_dir, "SKILL.md"),
+            metadata.get(
+                "skill_exists", os.path.exists(os.path.join(snapshot_dir, "SKILL.md"))
+            ),
+        ),
+    )
+    for destination, source, existed_before in artifacts:
+        if not destination:
+            continue
+        if existed_before and os.path.exists(source):
+            os.makedirs(os.path.dirname(destination), exist_ok=True)
+            shutil.copy2(source, destination)
+        elif not existed_before and os.path.exists(destination):
+            os.remove(destination)
+
+    print(f"  [Resume] Restored pre-batch snapshot for batch_{batch_idx:03d}")
+    return True
+
+
+def mark_batch_completed(args, batch_idx, samples_info, successful_samples):
+    """Atomically mark a knowledge batch as fully merged."""
+    snapshot_dir = os.path.join(args.output_dir, "snapshots", f"batch_{batch_idx:03d}")
+    os.makedirs(snapshot_dir, exist_ok=True)
+    marker_path = os.path.join(snapshot_dir, "completed.json")
+    marker_tmp_path = marker_path + ".tmp"
+    marker = {
+        "batch_idx": batch_idx,
+        "successful_samples": successful_samples,
+        "sample_ids": [str(info.get("question_id", "")) for info in samples_info],
+    }
+    with open(marker_tmp_path, 'w', encoding='utf-8') as f:
+        json.dump(marker, f, ensure_ascii=False, indent=2)
+    os.replace(marker_tmp_path, marker_path)
 
 
 def process_large_batch_experiences(samples_info, args, batch_idx=0, is_final=False):
@@ -302,16 +370,23 @@ def process_large_batch_experiences(samples_info, args, batch_idx=0, is_final=Fa
     """
     if not samples_info:
         return 0
+    snapshot_dir = os.path.join(args.output_dir, "snapshots", f"batch_{batch_idx:03d}")
+    completion_marker = os.path.join(snapshot_dir, "completed.json")
+    if os.path.exists(completion_marker):
+        print(f"\n[Large Batch {batch_idx}] Already completed, skipping knowledge merge.")
+        return len(samples_info)
+
     start_time = time.time()
     print(f"\n[Large Batch {batch_idx}] Processing experience generation for {len(samples_info)} samples...")
     
-    # Save snapshot before processing
-    save_knowledge_snapshot(args, batch_idx)
+    if not restore_knowledge_snapshot(args, batch_idx):
+        save_knowledge_snapshot(args, batch_idx)
     
     # Parallel experience and skill generation for all samples in the large batch
     all_experience_ops = []
     all_skill_contents = []
     successful_samples = 0
+    batch_errors = []
     
     gen_start = time.time()
     # Experience generation now handles skill generation internally to avoid race conditions
@@ -331,9 +406,13 @@ def process_large_batch_experiences(samples_info, args, batch_idx=0, is_final=Fa
                         all_skill_contents.append(result['skill_content'])
                     successful_samples += 1
                 else:
-                    print(f"  Warning: Generation failed for {result['sample_id']}: {result.get('error', 'Unknown error')}")
+                    error = f"Generation failed for {result['sample_id']}: {result.get('error', 'Unknown error')}"
+                    batch_errors.append(error)
+                    print(f"  Warning: {error}")
             except Exception as e:
-                print(f"  Warning: Generation failed for {sample_info['question_id']}: {e}")
+                error = f"Generation failed for {sample_info['question_id']}: {e}"
+                batch_errors.append(error)
+                print(f"  Warning: {error}")
     
     gen_time = time.time() - gen_start
     print(f"  [Timing] Experience generation: {gen_time:.1f}s")
@@ -368,7 +447,9 @@ def process_large_batch_experiences(samples_info, args, batch_idx=0, is_final=Fa
                 print(f"  [Large Batch] Merged {len(all_experience_ops)} experience operations into library (final size: {len(merged)})")
                 print(f"  [Timing] Experience merge: {merge_time:.1f}s")
         except Exception as e:
-            print(f"  Warning: Failed to merge experiences into library: {e}")
+            error = f"Failed to merge experiences into library: {e}"
+            batch_errors.append(error)
+            print(f"  Warning: {error}")
             
     # Merge all skills into library (single merge operation)
     if all_skill_contents and getattr(args, 'skill_library', None):
@@ -406,7 +487,25 @@ def process_large_batch_experiences(samples_info, args, batch_idx=0, is_final=Fa
                 print(f"  [Large Batch] Merged {len(all_skill_contents)} skills into library")
                 print(f"  [Timing] Skill merge: {merge_time:.1f}s")
         except Exception as e:
-            print(f"  Warning: Failed to merge skills into library: {e}")
+            error = f"Failed to merge skills into library: {e}"
+            batch_errors.append(error)
+            print(f"  Warning: {error}")
+
+    if getattr(args, 'skill_enable', False) and len(all_skill_contents) != successful_samples:
+        batch_errors.append(
+            f"Skill generation incomplete: {len(all_skill_contents)}/{successful_samples}"
+        )
+    if successful_samples != len(samples_info):
+        batch_errors.append(
+            f"Sample generation incomplete: {successful_samples}/{len(samples_info)}"
+        )
+    if batch_errors:
+        raise RuntimeError(
+            f"Large batch {batch_idx} did not complete; rerun will restore its snapshot. "
+            + "; ".join(batch_errors)
+        )
+
+    mark_batch_completed(args, batch_idx, samples_info, successful_samples)
     
     total_time = time.time() - start_time
     print(f"[Large Batch] Completed: {successful_samples}/{len(samples_info)} samples processed successfully (total: {total_time:.1f}s)")

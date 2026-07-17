@@ -18,7 +18,7 @@ from .llm_client import ExperienceLLM
 MAX_RETRIES = 3
 
 # Token configuration
-MAX_TOKENS = 12288
+MAX_TOKENS = int(os.environ.get("EXPERIENCE_CRITIQUE_MAX_TOKENS", "12288"))
 
 
 # --------- Intra-sample critique ---------

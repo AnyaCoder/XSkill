@@ -20,7 +20,7 @@ from .multimodal_analysis import generate_image_captions
 MAX_RETRIES = 3
 
 # Token configuration
-MAX_TOKENS = 12288  # Max tokens for trajectory summarization
+MAX_TOKENS = int(os.environ.get("EXPERIENCE_SUMMARY_MAX_TOKENS", "12288"))
 
 
 # --------- Summarization ---------
@@ -81,6 +81,36 @@ def _scan_all_images(
                     }
     
     return image_map
+
+
+def _observation_index(caption_key: str) -> int:
+    match = re.search(r"(?:observation|tool_image)_(\d+)", caption_key)
+    return int(match.group(1)) if match else -1
+
+
+def _select_images_for_captioning(
+    all_images: Dict[str, Dict[str, Any]],
+) -> Dict[str, Dict[str, Any]]:
+    """Optionally retain only the last derived image from each rollout."""
+    if os.environ.get("EXPERIENCE_IMAGE_SELECTION", "all") != "final_per_rollout":
+        return all_images
+
+    by_rollout: Dict[str, List[tuple[str, Dict[str, Any]]]] = {}
+    for key, info in all_images.items():
+        by_rollout.setdefault(info["rollout_dir"], []).append((key, info))
+
+    selected: Dict[str, Dict[str, Any]] = {}
+    for rollout_dir, items in by_rollout.items():
+        derived = [(key, info) for key, info in items if not info["is_original"]]
+        if derived:
+            key, info = max(derived, key=lambda item: (_observation_index(item[0]), item[0]))
+            selected[key] = info
+            continue
+        originals = [(key, info) for key, info in items if info["is_original"]]
+        if originals:
+            key, info = sorted(originals, key=lambda item: item[0])[0]
+            selected[key] = info
+    return selected
 
 
 def _find_original_images_for_tool_image(
@@ -411,8 +441,10 @@ def summarize_rollouts(traj_paths: Union[str, List[str]], llm: ExperienceLLM, sa
     evidence = metadata.get("evidence")
     system_prompt_text = metadata.get("system_prompt")
     
-    # Scan all images in the directory
-    all_images = _scan_all_images(resolved_sample_dir)
+    # Scan all images in the directory. Keep the complete map for linking a selected
+    # crop to its source image, even when only final crops are captioned.
+    scanned_images = _scan_all_images(resolved_sample_dir)
+    all_images = _select_images_for_captioning(scanned_images)
     
     if not all_images:
         print(f"  Warning: No images found in {resolved_sample_dir}")
@@ -443,13 +475,13 @@ def summarize_rollouts(traj_paths: Union[str, List[str]], llm: ExperienceLLM, sa
             # For tool-generated images, find and include original_image paths
             if not is_original:
                 original_image_keys = _find_original_images_for_tool_image(
-                    caption_key, rollout_dir, all_images
+                    caption_key, rollout_dir, scanned_images
                 )
                 if original_image_keys:
                     # Get the actual Path objects for original images
                     original_image_paths = []
                     for orig_key in original_image_keys:
-                        orig_info = all_images.get(orig_key)
+                        orig_info = scanned_images.get(orig_key)
                         if orig_info:
                             original_image_paths.append(orig_info["file_path"])
                     if original_image_paths:

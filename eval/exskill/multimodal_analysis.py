@@ -10,7 +10,8 @@ from .llm_client import ExperienceLLM
 # --------- Constants ---------
 
 # Token configuration
-MAX_TOKENS = 2048  # Max tokens for image caption generation
+MAX_TOKENS = int(os.environ.get("EXPERIENCE_CAPTION_MAX_TOKENS", "2048"))
+MAX_CAPTION_CHARS = int(os.environ.get("EXPERIENCE_CAPTION_MAX_CHARS", "0"))
 
 # Concurrency configuration
 MAX_WORKERS = 8  # Maximum number of concurrent workers for image caption generation
@@ -20,6 +21,12 @@ MAX_WORKERS = 8  # Maximum number of concurrent workers for image caption genera
 
 # Global prompt for image description
 IMAGE_DESCRIPTION_PROMPT = "Please provide a detailed visual description and analysis of this image. The background context above is provided to help you understand the image's purpose and origin, which should guide you to focus on relevant visual details. Describe key objects, their spatial relationships, notable visual details, and any observable actions or events. Highlight how this image contributes to the overall task. Format your response as a single paragraph (no headings, no bullet points, no problem-solving steps), written in clear English, with no more than 200 words."
+
+
+def _truncate_caption(caption: str) -> str:
+    if MAX_CAPTION_CHARS > 0 and len(caption) > MAX_CAPTION_CHARS:
+        return caption[:MAX_CAPTION_CHARS].rstrip() + " [truncated]"
+    return caption
 
 
 def _caption_cache_path(
@@ -103,13 +110,13 @@ def _generate_single_image_caption(
                         print(f"  Warning: Failed to load original image {orig_path}: {e}")
         
         # chat_with_image accepts single image or list
-        return llm.chat_with_image(
+        return _truncate_caption(llm.chat_with_image(
             prompt=prompt,
             image=images_to_send,
             max_tokens=MAX_TOKENS,
             temperature=0.3,
             return_placeholder_on_error=True
-        )
+        ))
     except Exception as e:
         return f"[Error generating caption: {str(e)}]"
 
@@ -231,7 +238,7 @@ def generate_image_captions(
             try:
                 cached_caption = cache_path.read_text(encoding="utf-8").strip()
                 if cached_caption:
-                    captions[caption_key] = cached_caption
+                    captions[caption_key] = _truncate_caption(cached_caption)
                     continue
             except Exception:
                 pass
@@ -290,5 +297,4 @@ def generate_image_captions(
                     captions[caption_key] = f"[Error generating caption: {str(e)}]"
     
     return captions
-
 

@@ -213,6 +213,69 @@ bash eval/run_exskill_inference.sh
 ```
 
 
+## V* Evidence-Skill Distillation
+
+The Evilift workflow distills a reusable single-image evidence-search skill from V*
+before transferring it to paired-image tasks. It uses deterministic train/dev/test
+splits, a task- and target-scale-stratified pilot, offline bounding-box evidence, and
+exact multiple-choice evaluation.
+
+Use the `implicitcue` environment and load the AutoDL credentials without committing
+them to the repository:
+
+```bash
+conda activate implicitcue
+source evilift/autodl_env.sh
+```
+
+`autodl_env.sh` reads `AUTODL_BASE_URL` and `AUTODL_API_KEY` from `../.env.local`.
+Reasoning and distillation both default to `Qwen3.5-397B-A17B`. Run the stages in
+order:
+
+```bash
+# Prepare fixed seed-42 splits and verify the endpoint/tool stack.
+evilift/run_vstar.sh prepare
+evilift/run_vstar.sh smoke
+
+# Run the 8-sample, 16-rollout gate. Continue only when pilot_gate.json passes.
+evilift/run_vstar.sh pilot
+
+# Start a clean 114-sample, 4-rollout-per-sample distillation.
+evilift/run_vstar.sh full
+
+# Establish the frozen dev baseline.
+evilift/run_vstar.sh baseline-dev
+```
+
+Evaluate the 25%, 50%, 75%, and final Skill candidates without test-time adaptation:
+
+```bash
+evilift/run_vstar.sh skill-dev output/vstar_single_image/full/snapshots/batch_004/SKILL.md skill_q25
+evilift/run_vstar.sh skill-dev output/vstar_single_image/full/snapshots/batch_008/SKILL.md skill_q50
+evilift/run_vstar.sh skill-dev output/vstar_single_image/full/snapshots/batch_012/SKILL.md skill_q75
+evilift/run_vstar.sh skill-dev memory_bank/vstar_single_image/full/SKILL.md skill_final
+
+evilift/run_vstar.sh select-dev \
+  output/vstar_single_image/baseline_dev/vstar_metrics.json \
+  output/vstar_single_image/skill_q25_dev/vstar_metrics.json \
+  output/vstar_single_image/skill_q50_dev/vstar_metrics.json \
+  output/vstar_single_image/skill_q75_dev/vstar_metrics.json \
+  output/vstar_single_image/skill_final_dev/vstar_metrics.json
+```
+
+Only the candidate recorded in `output/vstar_single_image/dev_selection.json` should
+be evaluated on the frozen test split:
+
+```bash
+evilift/run_vstar.sh baseline-test
+evilift/run_vstar.sh skill-test PATH_TO_SELECTED_SKILL selected
+```
+
+Set `VSTAR_RESUME=1` to resume an interrupted stage. Completed knowledge batches are
+marked under the run's `snapshots/` directory; an incomplete batch is restored to its
+pre-batch snapshot before it is retried.
+
+
 
 ## Citation
 

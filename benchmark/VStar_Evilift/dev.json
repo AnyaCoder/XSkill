@@ -1,0 +1,870 @@
+[
+  {
+    "doc_id": "vstar_0001",
+    "images": [
+      "vstar/direct_attributes/sa_7018.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the woman's jacket?\n(A) black\n(B) red\n(C) blue\n(D) orange\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "woman's jacket"
+      ],
+      "bboxes_xywh": [
+        [
+          583,
+          1762,
+          28,
+          42
+        ]
+      ],
+      "source_image": "direct_attributes/sa_7018.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0002",
+    "images": [
+      "vstar/direct_attributes/sa_11528.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the woman's bikini?\n(A) white\n(B) red\n(C) black\n(D) yellow\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "woman's bikini"
+      ],
+      "bboxes_xywh": [
+        [
+          170,
+          1318,
+          19,
+          32
+        ]
+      ],
+      "source_image": "direct_attributes/sa_11528.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0004",
+    "images": [
+      "vstar/direct_attributes/sa_6422.jpg"
+    ],
+    "problem": "<image>\nIs the color of the motorcycle orange or green?\n(A) green\n(B) orange\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "motorcycle"
+      ],
+      "bboxes_xywh": [
+        [
+          410,
+          740,
+          109,
+          101
+        ]
+      ],
+      "source_image": "direct_attributes/sa_6422.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0009",
+    "images": [
+      "vstar/direct_attributes/sa_40973.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the woman's scarf?\n(A) white\n(B) red\n(C) yellow\n(D) green\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "woman's scarf"
+      ],
+      "bboxes_xywh": [
+        [
+          1825,
+          685,
+          31,
+          27
+        ]
+      ],
+      "source_image": "direct_attributes/sa_40973.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0016",
+    "images": [
+      "vstar/direct_attributes/sa_16854.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the watch?\n(A) blue\n(B) silver\n(C) white\n(D) black\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "watch"
+      ],
+      "bboxes_xywh": [
+        [
+          494,
+          891,
+          14,
+          30
+        ]
+      ],
+      "source_image": "direct_attributes/sa_16854.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0022",
+    "images": [
+      "vstar/direct_attributes/sa_23893.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the motorcycle?\n(A) blue\n(B) orange\n(C) white\n(D) black\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "motorcycle"
+      ],
+      "bboxes_xywh": [
+        [
+          108,
+          805,
+          46,
+          58
+        ]
+      ],
+      "source_image": "direct_attributes/sa_23893.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0024",
+    "images": [
+      "vstar/direct_attributes/sa_4988.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the flower?\n(A) pink\n(B) yellow\n(C) red\n(D) white\nAnswer with the option's letter from the given choices directly.",
+    "solution": "D",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "flower"
+      ],
+      "bboxes_xywh": [
+        [
+          1356,
+          1073,
+          70,
+          33
+        ]
+      ],
+      "source_image": "direct_attributes/sa_4988.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0036",
+    "images": [
+      "vstar/direct_attributes/sa_59664.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the dog?\n(A) gray\n(B) yellow\n(C) brown\n(D) black and white\nAnswer with the option's letter from the given choices directly.",
+    "solution": "D",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "dog"
+      ],
+      "bboxes_xywh": [
+        [
+          292,
+          901,
+          26,
+          17
+        ]
+      ],
+      "source_image": "direct_attributes/sa_59664.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0037",
+    "images": [
+      "vstar/direct_attributes/sa_9611.jpg"
+    ],
+    "problem": "<image>\nWhat is the material of the stool?\n(A) bamboo\n(B) steel\n(C) plastic\n(D) wood\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "stool"
+      ],
+      "bboxes_xywh": [
+        [
+          1505,
+          610,
+          85,
+          87
+        ]
+      ],
+      "source_image": "direct_attributes/sa_9611.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0046",
+    "images": [
+      "vstar/direct_attributes/sa_10204.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the van?\n(A) red\n(B) white\n(C) silver\n(D) black\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "van"
+      ],
+      "bboxes_xywh": [
+        [
+          520,
+          1002,
+          64,
+          29
+        ]
+      ],
+      "source_image": "direct_attributes/sa_10204.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0050",
+    "images": [
+      "vstar/direct_attributes/sa_25212.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the helmet?\n(A) red\n(B) yellow\n(C) white\n(D) blue\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "helmet"
+      ],
+      "bboxes_xywh": [
+        [
+          1776,
+          994,
+          8,
+          8
+        ]
+      ],
+      "source_image": "direct_attributes/sa_25212.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0051",
+    "images": [
+      "vstar/direct_attributes/sa_68625.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the straw?\n(A) black\n(B) red\n(C) pink\n(D) white\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "straw"
+      ],
+      "bboxes_xywh": [
+        [
+          1744,
+          920,
+          15,
+          48
+        ]
+      ],
+      "source_image": "direct_attributes/sa_68625.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0058",
+    "images": [
+      "vstar/direct_attributes/sa_55332.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the electric rickshaw?\n(A) green\n(B) red\n(C) black\n(D) yellow\nAnswer with the option's letter from the given choices directly.",
+    "solution": "D",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "electric rickshaw"
+      ],
+      "bboxes_xywh": [
+        [
+          223,
+          2057,
+          51,
+          45
+        ]
+      ],
+      "source_image": "direct_attributes/sa_55332.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0059",
+    "images": [
+      "vstar/direct_attributes/sa_10052.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the plastic basin?\n(A) blue\n(B) yellow\n(C) pink\n(D) white\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "plastic basin"
+      ],
+      "bboxes_xywh": [
+        [
+          2583,
+          1227,
+          94,
+          58
+        ]
+      ],
+      "source_image": "direct_attributes/sa_10052.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0063",
+    "images": [
+      "vstar/direct_attributes/sa_6965.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the man's cap?\n(A) white\n(B) red\n(C) gray\n(D) blue\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "man's cap"
+      ],
+      "bboxes_xywh": [
+        [
+          939,
+          1014,
+          19,
+          11
+        ]
+      ],
+      "source_image": "direct_attributes/sa_6965.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0073",
+    "images": [
+      "vstar/direct_attributes/sa_30179.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the bicycle?\n(A) yellow\n(B) white\n(C) red\n(D) black\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "bicycle"
+      ],
+      "bboxes_xywh": [
+        [
+          1348,
+          1353,
+          46,
+          41
+        ]
+      ],
+      "source_image": "direct_attributes/sa_30179.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0075",
+    "images": [
+      "vstar/direct_attributes/sa_86882.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the mailbox?\n(A) red\n(B) white\n(C) black\n(D) yellow\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "mailbox"
+      ],
+      "bboxes_xywh": [
+        [
+          1015,
+          1095,
+          50,
+          48
+        ]
+      ],
+      "source_image": "direct_attributes/sa_86882.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0076",
+    "images": [
+      "vstar/direct_attributes/sa_4690.jpg"
+    ],
+    "problem": "<image>\nWhat is the material of the glove?\n(A) rubber\n(B) cotton\n(C) kevlar\n(D) leather\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "glove"
+      ],
+      "bboxes_xywh": [
+        [
+          564,
+          142,
+          155,
+          157
+        ]
+      ],
+      "source_image": "direct_attributes/sa_4690.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0080",
+    "images": [
+      "vstar/direct_attributes/sa_39518.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the tissue box?\n(A) gray\n(B) white\n(C) black\n(D) blue\nAnswer with the option's letter from the given choices directly.",
+    "solution": "D",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "tissue box"
+      ],
+      "bboxes_xywh": [
+        [
+          1424,
+          740,
+          58,
+          37
+        ]
+      ],
+      "source_image": "direct_attributes/sa_39518.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0087",
+    "images": [
+      "vstar/direct_attributes/sa_10701.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the paraglider?\n(A) white\n(B) blue\n(C) pink\n(D) red\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "paraglider"
+      ],
+      "bboxes_xywh": [
+        [
+          1146,
+          785,
+          25,
+          27
+        ]
+      ],
+      "source_image": "direct_attributes/sa_10701.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0094",
+    "images": [
+      "vstar/direct_attributes/sa_31451.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the hat?\n(A) black\n(B) pink\n(C) yellow\n(D) white\nAnswer with the option's letter from the given choices directly.",
+    "solution": "D",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "hat"
+      ],
+      "bboxes_xywh": [
+        [
+          888,
+          1363,
+          18,
+          12
+        ]
+      ],
+      "source_image": "direct_attributes/sa_31451.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0096",
+    "images": [
+      "vstar/direct_attributes/sa_19483.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the luggage?\n(A) red\n(B) yellow\n(C) green\n(D) black\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "luggage"
+      ],
+      "bboxes_xywh": [
+        [
+          343,
+          779,
+          109,
+          212
+        ]
+      ],
+      "source_image": "direct_attributes/sa_19483.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0110",
+    "images": [
+      "vstar/direct_attributes/sa_10033.jpg"
+    ],
+    "problem": "<image>\nIs the flag red or white?\n(A) white\n(B) red\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "flag"
+      ],
+      "bboxes_xywh": [
+        [
+          1648,
+          678,
+          29,
+          81
+        ]
+      ],
+      "source_image": "direct_attributes/sa_10033.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0112",
+    "images": [
+      "vstar/direct_attributes/sa_10415.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the fire hydrant?\n(A) yellow\n(B) white\n(C) red\n(D) black\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "fire hydrant"
+      ],
+      "bboxes_xywh": [
+        [
+          383,
+          1246,
+          22,
+          43
+        ]
+      ],
+      "source_image": "direct_attributes/sa_10415.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0122",
+    "images": [
+      "vstar/relative_position/sa_40188.jpg"
+    ],
+    "problem": "<image>\nIs the soccer ball on the left or right side of the water dispenser?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "soccer ball",
+        "water dispenser"
+      ],
+      "bboxes_xywh": [
+        [
+          1344,
+          942,
+          19,
+          20
+        ],
+        [
+          763,
+          766,
+          20,
+          59
+        ]
+      ],
+      "source_image": "relative_position/sa_40188.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0133",
+    "images": [
+      "vstar/relative_position/sa_28639.jpg"
+    ],
+    "problem": "<image>\nIs the bell above or below the clock?\n(A) above\n(B) below\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "bell",
+        "clock"
+      ],
+      "bboxes_xywh": [
+        [
+          942,
+          660,
+          36,
+          72
+        ],
+        [
+          921,
+          493,
+          63,
+          48
+        ]
+      ],
+      "source_image": "relative_position/sa_28639.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0136",
+    "images": [
+      "vstar/relative_position/sa_62287.jpg"
+    ],
+    "problem": "<image>\nIs the switch on the left or right side of the towel?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "towel",
+        "switch"
+      ],
+      "bboxes_xywh": [
+        [
+          339,
+          1062,
+          147,
+          219
+        ],
+        [
+          776,
+          890,
+          35,
+          51
+        ]
+      ],
+      "source_image": "relative_position/sa_62287.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0147",
+    "images": [
+      "vstar/relative_position/sa_29022.jpg"
+    ],
+    "problem": "<image>\nIs the green surfboard on the left or right side of the purple umbrella?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "green surfboard",
+        "purple umbrella"
+      ],
+      "bboxes_xywh": [
+        [
+          634,
+          606,
+          38,
+          31
+        ],
+        [
+          1746,
+          786,
+          69,
+          48
+        ]
+      ],
+      "source_image": "relative_position/sa_29022.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0150",
+    "images": [
+      "vstar/relative_position/sa_40555.jpg"
+    ],
+    "problem": "<image>\nIs the yellow umbrella on the left or right side of the pink umbrella?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "yellow umbrella",
+        "pink umbrella"
+      ],
+      "bboxes_xywh": [
+        [
+          1166,
+          1060,
+          33,
+          31
+        ],
+        [
+          1227,
+          986,
+          31,
+          28
+        ]
+      ],
+      "source_image": "relative_position/sa_40555.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0161",
+    "images": [
+      "vstar/relative_position/sa_46221.jpg"
+    ],
+    "problem": "<image>\nIs the red balloon above or below the white balloon?\n(A) below\n(B) above\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "red balloon",
+        "white balloon"
+      ],
+      "bboxes_xywh": [
+        [
+          1593,
+          759,
+          24,
+          18
+        ],
+        [
+          1558,
+          714,
+          21,
+          23
+        ]
+      ],
+      "source_image": "relative_position/sa_46221.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0164",
+    "images": [
+      "vstar/relative_position/sa_5465.jpg"
+    ],
+    "problem": "<image>\nIs the red vehicle on the left or right side of the sculpture?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "red vehicle"
+      ],
+      "bboxes_xywh": [
+        [
+          1909,
+          610,
+          99,
+          33
+        ]
+      ],
+      "source_image": "relative_position/sa_5465.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0174",
+    "images": [
+      "vstar/relative_position/sa_79958.jpg"
+    ],
+    "problem": "<image>\nIs the steel ladder on the left or right side of the wagon?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "steel ladder",
+        "wagon"
+      ],
+      "bboxes_xywh": [
+        [
+          1112,
+          686,
+          21,
+          47
+        ],
+        [
+          1345,
+          831,
+          65,
+          31
+        ]
+      ],
+      "source_image": "relative_position/sa_79958.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0179",
+    "images": [
+      "vstar/relative_position/sa_53509.jpg"
+    ],
+    "problem": "<image>\nIs the seesaw on the left or right side of the red vehicle?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "seesaw",
+        "red vehicle"
+      ],
+      "bboxes_xywh": [
+        [
+          2625,
+          1002,
+          192,
+          76
+        ],
+        [
+          2388,
+          835,
+          80,
+          46
+        ]
+      ],
+      "source_image": "relative_position/sa_53509.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0180",
+    "images": [
+      "vstar/relative_position/sa_56362.jpg"
+    ],
+    "problem": "<image>\nIs the bucket on the left or right side of the plunger?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "bucket",
+        "plunger"
+      ],
+      "bboxes_xywh": [
+        [
+          254,
+          2150,
+          70,
+          92
+        ],
+        [
+          193,
+          2140,
+          27,
+          88
+        ]
+      ],
+      "source_image": "relative_position/sa_56362.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0186",
+    "images": [
+      "vstar/relative_position/sa_64142.jpg"
+    ],
+    "problem": "<image>\nIs the motorcyclist on the left or right side of the truck?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "motorcyclist"
+      ],
+      "bboxes_xywh": [
+        [
+          194,
+          700,
+          25,
+          40
+        ]
+      ],
+      "source_image": "relative_position/sa_64142.jpg"
+    }
+  }
+]

@@ -11,14 +11,14 @@ from .experience_utils import image_to_base64
 # --------- Constants ---------
 
 # Retry configuration
-MAX_RETRIES = 3
+MAX_RETRIES = int(os.environ.get("EXPERIENCE_MAX_RETRIES", "3"))
 
 # Timeout configuration
-API_TIMEOUT = 300  # Timeout for general API requests (seconds)
-API_TIMEOUT_IMAGE = 300  # Timeout for multimodal API requests (seconds)
+API_TIMEOUT = int(os.environ.get("EXPERIENCE_API_TIMEOUT", "300"))
+API_TIMEOUT_IMAGE = int(os.environ.get("EXPERIENCE_IMAGE_API_TIMEOUT", str(API_TIMEOUT)))
 
 # Token configuration
-MAX_TOKENS_DEFAULT = 12288  # Default max tokens for LLM calls
+MAX_TOKENS_DEFAULT = int(os.environ.get("EXPERIENCE_MAX_TOKENS", "12288"))
 
 
 class ExperienceLLM:
@@ -354,4 +354,3 @@ class ExperienceLLM:
             fallback_api_name="Fallback Multimodal API",
             require_chat_completions=True  # Multimodal API requires /chat/completions endpoint
         )
-

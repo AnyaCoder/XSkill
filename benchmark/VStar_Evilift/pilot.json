@@ -1,0 +1,200 @@
+[
+  {
+    "doc_id": "vstar_0017",
+    "images": [
+      "vstar/direct_attributes/sa_30935.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the scarf?\n(A) red\n(B) green\n(C) white\n(D) yellow\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "scarf"
+      ],
+      "bboxes_xywh": [
+        [
+          1091,
+          741,
+          50,
+          25
+        ]
+      ],
+      "source_image": "direct_attributes/sa_30935.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0079",
+    "images": [
+      "vstar/direct_attributes/sa_37675.jpg"
+    ],
+    "problem": "<image>\nWhat is the cartoon character on the clock.\n(A) Bugs Bunny\n(B) Mickey Mouse\n(C) SpongeBob\n(D) Donald Duck\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "clock"
+      ],
+      "bboxes_xywh": [
+        [
+          509,
+          419,
+          185,
+          165
+        ]
+      ],
+      "source_image": "direct_attributes/sa_37675.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0083",
+    "images": [
+      "vstar/direct_attributes/sa_66657.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the soda can?\n(A) silver\n(B) red\n(C) white\n(D) green\nAnswer with the option's letter from the given choices directly.",
+    "solution": "D",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "soda can"
+      ],
+      "bboxes_xywh": [
+        [
+          117,
+          1234,
+          8,
+          12
+        ]
+      ],
+      "source_image": "direct_attributes/sa_66657.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0102",
+    "images": [
+      "vstar/direct_attributes/sa_1244.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the apples?\n(A) green\n(B) yellow\n(C) red\n(D) dark red\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "apples"
+      ],
+      "bboxes_xywh": [
+        [
+          1929,
+          811,
+          105,
+          52
+        ]
+      ],
+      "source_image": "direct_attributes/sa_1244.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0152",
+    "images": [
+      "vstar/relative_position/sa_31784.jpg"
+    ],
+    "problem": "<image>\nIs the shovel on the left or right side of the house?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "shovel"
+      ],
+      "bboxes_xywh": [
+        [
+          1487,
+          939,
+          125,
+          271
+        ]
+      ],
+      "source_image": "relative_position/sa_31784.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0154",
+    "images": [
+      "vstar/relative_position/sa_86732.jpg"
+    ],
+    "problem": "<image>\nIs the bucket on the left or right side of the cyclist?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "bucket",
+        "cyclist"
+      ],
+      "bboxes_xywh": [
+        [
+          1904,
+          906,
+          46,
+          54
+        ],
+        [
+          882,
+          899,
+          22,
+          62
+        ]
+      ],
+      "source_image": "relative_position/sa_86732.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0158",
+    "images": [
+      "vstar/relative_position/sa_51681.jpg"
+    ],
+    "problem": "<image>\nIs the bowl on the left or right side of the faucet?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "faucet",
+        "bowl"
+      ],
+      "bboxes_xywh": [
+        [
+          636,
+          619,
+          75,
+          91
+        ],
+        [
+          734,
+          656,
+          95,
+          42
+        ]
+      ],
+      "source_image": "relative_position/sa_51681.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0176",
+    "images": [
+      "vstar/relative_position/sa_49792.jpg"
+    ],
+    "problem": "<image>\nIs the soccer ball on the left or right side of the long bench?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "soccer ball"
+      ],
+      "bboxes_xywh": [
+        [
+          1054,
+          1004,
+          15,
+          15
+        ]
+      ],
+      "source_image": "relative_position/sa_49792.jpg"
+    }
+  }
+]

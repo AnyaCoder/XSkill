@@ -4,32 +4,11 @@ from __future__ import annotations
 
 import argparse
 import json
-import math
-import re
 from collections import defaultdict
 from pathlib import Path
 from typing import Any, Iterable
 
-
-ANSWER_PATTERN = re.compile(r"<answer>\s*([A-E])\s*</answer>", re.IGNORECASE)
-
-
-def extract_answer(value: Any) -> str | None:
-    if not isinstance(value, str):
-        return None
-    match = ANSWER_PATTERN.search(value)
-    if match:
-        return match.group(1).upper()
-    stripped = value.strip().upper()
-    return stripped if stripped in set("ABCDE") else None
-
-
-def _percentile(values: list[float], percentile: float) -> float:
-    if not values:
-        return 0.0
-    ordered = sorted(values)
-    index = max(0, math.ceil(percentile * len(ordered)) - 1)
-    return float(ordered[index])
+from evilift.evaluation_utils import extract_answer, percentile
 
 
 def calculate_metrics(results: Iterable[dict[str, Any]]) -> dict[str, Any]:
@@ -76,7 +55,7 @@ def calculate_metrics(results: Iterable[dict[str, Any]]) -> dict[str, Any]:
             for task, count in sorted(task_totals.items())
         },
         "average_model_calls": round(sum(model_calls) / total, 4) if total else 0.0,
-        "p95_model_calls": _percentile(model_calls, 0.95),
+        "p95_model_calls": percentile(model_calls, 0.95),
         "average_tool_calls": round(sum(tool_calls) / total, 4) if total else 0.0,
         "direct_answer_rate": round(direct_answers / total, 4) if total else 0.0,
         "budget_violation_rate": round(budget_violations / total, 4) if total else 0.0,
@@ -108,4 +87,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

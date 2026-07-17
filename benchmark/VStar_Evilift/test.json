@@ -1,0 +1,1066 @@
+[
+  {
+    "doc_id": "vstar_0026",
+    "images": [
+      "vstar/direct_attributes/sa_50442.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the cart?\n(A) green\n(B) white\n(C) black\n(D) silver\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "cart"
+      ],
+      "bboxes_xywh": [
+        [
+          233,
+          747,
+          57,
+          64
+        ]
+      ],
+      "source_image": "direct_attributes/sa_50442.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0028",
+    "images": [
+      "vstar/direct_attributes/sa_7428.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the man's helmet?\n(A) white\n(B) red\n(C) yellow\n(D) blue\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "man's helmet"
+      ],
+      "bboxes_xywh": [
+        [
+          1332,
+          636,
+          21,
+          16
+        ]
+      ],
+      "source_image": "direct_attributes/sa_7428.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0029",
+    "images": [
+      "vstar/direct_attributes/sa_11290.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the umbrella?\n(A) red\n(B) blue\n(C) black\n(D) white\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "umbrella"
+      ],
+      "bboxes_xywh": [
+        [
+          1973,
+          1232,
+          59,
+          37
+        ]
+      ],
+      "source_image": "direct_attributes/sa_11290.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0030",
+    "images": [
+      "vstar/direct_attributes/sa_5346.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the man's cap?\n(A) yellow\n(B) red\n(C) gray\n(D) green\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "man's cap"
+      ],
+      "bboxes_xywh": [
+        [
+          1069,
+          980,
+          44,
+          18
+        ]
+      ],
+      "source_image": "direct_attributes/sa_5346.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0031",
+    "images": [
+      "vstar/direct_attributes/sa_16306.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the clock?\n(A) black\n(B) yellow\n(C) green\n(D) red\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "clock"
+      ],
+      "bboxes_xywh": [
+        [
+          1372,
+          832,
+          44,
+          29
+        ]
+      ],
+      "source_image": "direct_attributes/sa_16306.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0034",
+    "images": [
+      "vstar/direct_attributes/sa_38195.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the cyclist's bag?\n(A) orange and black\n(B) white and red\n(C) red and blue\n(D) blue and gray\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "cyclist"
+      ],
+      "bboxes_xywh": [
+        [
+          1550,
+          1112,
+          44,
+          70
+        ]
+      ],
+      "source_image": "direct_attributes/sa_38195.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0039",
+    "images": [
+      "vstar/direct_attributes/sa_65370.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the shovel?\n(A) yellow\n(B) red\n(C) blue\n(D) black\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "shovel"
+      ],
+      "bboxes_xywh": [
+        [
+          877,
+          1234,
+          10,
+          25
+        ]
+      ],
+      "source_image": "direct_attributes/sa_65370.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0040",
+    "images": [
+      "vstar/direct_attributes/sa_31511.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the handbag?\n(A) white\n(B) red\n(C) black\n(D) yellow\nAnswer with the option's letter from the given choices directly.",
+    "solution": "D",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "handbag"
+      ],
+      "bboxes_xywh": [
+        [
+          2278,
+          1010,
+          18,
+          35
+        ]
+      ],
+      "source_image": "direct_attributes/sa_31511.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0048",
+    "images": [
+      "vstar/direct_attributes/sa_26968.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the pink-haired woman's handbag?\n(A) brown\n(B) white\n(C) red\n(D) pink\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "pink-haired woman"
+      ],
+      "bboxes_xywh": [
+        [
+          1160,
+          1055,
+          28,
+          74
+        ]
+      ],
+      "source_image": "direct_attributes/sa_26968.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0049",
+    "images": [
+      "vstar/direct_attributes/sa_30034.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the telephone?\n(A) green\n(B) white\n(C) orange\n(D) blue\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "telephone"
+      ],
+      "bboxes_xywh": [
+        [
+          806,
+          1076,
+          25,
+          28
+        ]
+      ],
+      "source_image": "direct_attributes/sa_30034.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0053",
+    "images": [
+      "vstar/direct_attributes/sa_43391.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the car?\n(A) red\n(B) white\n(C) silver\n(D) black\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "car"
+      ],
+      "bboxes_xywh": [
+        [
+          314,
+          920,
+          108,
+          50
+        ]
+      ],
+      "source_image": "direct_attributes/sa_43391.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0055",
+    "images": [
+      "vstar/direct_attributes/sa_28073.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the bicycle?\n(A) black\n(B) red\n(C) white\n(D) yellow\nAnswer with the option's letter from the given choices directly.",
+    "solution": "D",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "bicycle"
+      ],
+      "bboxes_xywh": [
+        [
+          1861,
+          953,
+          45,
+          30
+        ]
+      ],
+      "source_image": "direct_attributes/sa_28073.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0056",
+    "images": [
+      "vstar/direct_attributes/sa_5413.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the woman's shirt?\n(A) white\n(B) purple\n(C) blue\n(D) pink\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "woman's shirt"
+      ],
+      "bboxes_xywh": [
+        [
+          416,
+          1171,
+          36,
+          45
+        ]
+      ],
+      "source_image": "direct_attributes/sa_5413.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0061",
+    "images": [
+      "vstar/direct_attributes/sa_80880.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the broom?\n(A) black\n(B) yellow\n(C) gray\n(D) red\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "broom"
+      ],
+      "bboxes_xywh": [
+        [
+          1818,
+          391,
+          137,
+          295
+        ]
+      ],
+      "source_image": "direct_attributes/sa_80880.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0067",
+    "images": [
+      "vstar/direct_attributes/sa_24546.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the suitcase?\n(A) red\n(B) gray\n(C) black\n(D) brown\nAnswer with the option's letter from the given choices directly.",
+    "solution": "D",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "suitcase"
+      ],
+      "bboxes_xywh": [
+        [
+          1411,
+          1201,
+          41,
+          25
+        ]
+      ],
+      "source_image": "direct_attributes/sa_24546.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0082",
+    "images": [
+      "vstar/direct_attributes/sa_64897.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the umbrella?\n(A) purple\n(B) black\n(C) blue\n(D) red\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "umbrella"
+      ],
+      "bboxes_xywh": [
+        [
+          308,
+          792,
+          36,
+          28
+        ]
+      ],
+      "source_image": "direct_attributes/sa_64897.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0086",
+    "images": [
+      "vstar/direct_attributes/sa_17108.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the truck?\n(A) white\n(B) black\n(C) yellow\n(D) silver\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "truck"
+      ],
+      "bboxes_xywh": [
+        [
+          1045,
+          1043,
+          87,
+          116
+        ]
+      ],
+      "source_image": "direct_attributes/sa_17108.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0089",
+    "images": [
+      "vstar/direct_attributes/sa_70112.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the lock?\n(A) yellow\n(B) silver\n(C) golden\n(D) red\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "lock"
+      ],
+      "bboxes_xywh": [
+        [
+          587,
+          1305,
+          68,
+          56
+        ]
+      ],
+      "source_image": "direct_attributes/sa_70112.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0091",
+    "images": [
+      "vstar/direct_attributes/sa_42562.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the handbag?\n(A) brown\n(B) black\n(C) red\n(D) white\nAnswer with the option's letter from the given choices directly.",
+    "solution": "D",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "handbag"
+      ],
+      "bboxes_xywh": [
+        [
+          1738,
+          944,
+          20,
+          49
+        ]
+      ],
+      "source_image": "direct_attributes/sa_42562.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0104",
+    "images": [
+      "vstar/direct_attributes/sa_63876.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the baby carriage?\n(A) red\n(B) blue\n(C) black\n(D) green\nAnswer with the option's letter from the given choices directly.",
+    "solution": "C",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "baby carriage"
+      ],
+      "bboxes_xywh": [
+        [
+          638,
+          992,
+          54,
+          51
+        ]
+      ],
+      "source_image": "direct_attributes/sa_63876.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0113",
+    "images": [
+      "vstar/direct_attributes/sa_84131.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the body of the bucket?\n(A) green\n(B) white\n(C) black\n(D) red\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "bucket"
+      ],
+      "bboxes_xywh": [
+        [
+          1283,
+          881,
+          39,
+          49
+        ]
+      ],
+      "source_image": "direct_attributes/sa_84131.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0114",
+    "images": [
+      "vstar/direct_attributes/sa_44097.jpg"
+    ],
+    "problem": "<image>\nWhat is the color of the plastic stool?\n(A) black\n(B) blue\n(C) white\n(D) red\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_direct_attributes",
+    "evidence": {
+      "target_objects": [
+        "plastic stool"
+      ],
+      "bboxes_xywh": [
+        [
+          2029,
+          1196,
+          45,
+          45
+        ]
+      ],
+      "source_image": "direct_attributes/sa_44097.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0117",
+    "images": [
+      "vstar/relative_position/sa_24971.jpg"
+    ],
+    "problem": "<image>\nIs the baby carriage on the left or right side of the cone?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "baby carriage",
+        "cone"
+      ],
+      "bboxes_xywh": [
+        [
+          451,
+          1180,
+          27,
+          20
+        ],
+        [
+          313,
+          1189,
+          10,
+          15
+        ]
+      ],
+      "source_image": "relative_position/sa_24971.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0120",
+    "images": [
+      "vstar/relative_position/sa_34291.jpg"
+    ],
+    "problem": "<image>\nIs the silver vehicle on the left or right side of the red vehicle?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "silver vehicle",
+        "red vehicle"
+      ],
+      "bboxes_xywh": [
+        [
+          83,
+          89,
+          88,
+          40
+        ],
+        [
+          631,
+          16,
+          90,
+          38
+        ]
+      ],
+      "source_image": "relative_position/sa_34291.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0124",
+    "images": [
+      "vstar/relative_position/sa_69634.jpg"
+    ],
+    "problem": "<image>\nIs the person with white trousers on the left or right side of the person in blue?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "person in blue",
+        "person with white trousers"
+      ],
+      "bboxes_xywh": [
+        [
+          308,
+          381,
+          22,
+          33
+        ],
+        [
+          208,
+          400,
+          23,
+          50
+        ]
+      ],
+      "source_image": "relative_position/sa_69634.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0131",
+    "images": [
+      "vstar/relative_position/sa_78272.jpg"
+    ],
+    "problem": "<image>\nIs the white chair on the left or right side of the street?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "white chair"
+      ],
+      "bboxes_xywh": [
+        [
+          1901,
+          1187,
+          92,
+          110
+        ]
+      ],
+      "source_image": "relative_position/sa_78272.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0135",
+    "images": [
+      "vstar/relative_position/sa_23298.jpg"
+    ],
+    "problem": "<image>\nIs the wheelchair on the left or right side of the lamp post?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "wheelchair"
+      ],
+      "bboxes_xywh": [
+        [
+          169,
+          1048,
+          26,
+          27
+        ]
+      ],
+      "source_image": "relative_position/sa_23298.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0143",
+    "images": [
+      "vstar/relative_position/sa_5613.jpg"
+    ],
+    "problem": "<image>\nIs the dog on the left or right side of the crosswalk?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "dog"
+      ],
+      "bboxes_xywh": [
+        [
+          2136,
+          1099,
+          76,
+          51
+        ]
+      ],
+      "source_image": "relative_position/sa_5613.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0144",
+    "images": [
+      "vstar/relative_position/sa_59351.jpg"
+    ],
+    "problem": "<image>\nIs the shopping cart on the left or right side of the dog?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "shopping cart",
+        "dog"
+      ],
+      "bboxes_xywh": [
+        [
+          1518,
+          1015,
+          70,
+          70
+        ],
+        [
+          1676,
+          1047,
+          52,
+          47
+        ]
+      ],
+      "source_image": "relative_position/sa_59351.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0145",
+    "images": [
+      "vstar/relative_position/sa_6531.jpg"
+    ],
+    "problem": "<image>\nWhich one is closer to the camera, the black vehicle or the silver vehicle?\n(A) black vehicle\n(B) silver vehicle\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "black vehicle",
+        "silver vehicle"
+      ],
+      "bboxes_xywh": [
+        [
+          1391,
+          749,
+          58,
+          50
+        ],
+        [
+          1463,
+          712,
+          74,
+          39
+        ]
+      ],
+      "source_image": "relative_position/sa_6531.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0146",
+    "images": [
+      "vstar/relative_position/sa_87051.jpg"
+    ],
+    "problem": "<image>\nIs the green bucket on the left or right side of the red tent?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "green bucket"
+      ],
+      "bboxes_xywh": [
+        [
+          46,
+          1039,
+          55,
+          45
+        ]
+      ],
+      "source_image": "relative_position/sa_87051.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0148",
+    "images": [
+      "vstar/relative_position/sa_77731.jpg"
+    ],
+    "problem": "<image>\nIs the slide on the left or right side of the life buoy?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "slide",
+        "life buoy"
+      ],
+      "bboxes_xywh": [
+        [
+          1107,
+          693,
+          282,
+          149
+        ],
+        [
+          401,
+          738,
+          30,
+          35
+        ]
+      ],
+      "source_image": "relative_position/sa_77731.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0151",
+    "images": [
+      "vstar/relative_position/sa_30441.jpg"
+    ],
+    "problem": "<image>\nIs the man with yellow cap on the left or right side of the lamp post?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "man with yellow cap"
+      ],
+      "bboxes_xywh": [
+        [
+          26,
+          1355,
+          39,
+          121
+        ]
+      ],
+      "source_image": "relative_position/sa_30441.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0155",
+    "images": [
+      "vstar/relative_position/sa_61121.jpg"
+    ],
+    "problem": "<image>\nIs the trash can on the left or right side of the baby carriage?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "baby carriage",
+        "trash can"
+      ],
+      "bboxes_xywh": [
+        [
+          1268,
+          929,
+          35,
+          37
+        ],
+        [
+          1529,
+          935,
+          32,
+          35
+        ]
+      ],
+      "source_image": "relative_position/sa_61121.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0162",
+    "images": [
+      "vstar/relative_position/sa_61594.jpg"
+    ],
+    "problem": "<image>\nIs the keyboard on the left or right side of the guitar?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "keyboard",
+        "guitar"
+      ],
+      "bboxes_xywh": [
+        [
+          1259,
+          751,
+          90,
+          15
+        ],
+        [
+          1445,
+          734,
+          36,
+          70
+        ]
+      ],
+      "source_image": "relative_position/sa_61594.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0168",
+    "images": [
+      "vstar/relative_position/sa_23575.jpg"
+    ],
+    "problem": "<image>\nIs the small red car on the left or right side of the baby carriage?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "small red car",
+        "baby carriage"
+      ],
+      "bboxes_xywh": [
+        [
+          675,
+          959,
+          50,
+          28
+        ],
+        [
+          837,
+          954,
+          39,
+          51
+        ]
+      ],
+      "source_image": "relative_position/sa_23575.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0169",
+    "images": [
+      "vstar/relative_position/sa_33280.jpg"
+    ],
+    "problem": "<image>\nIs the scooter on the left or right side of the cyclist?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "scooter",
+        "cyclist"
+      ],
+      "bboxes_xywh": [
+        [
+          3535,
+          763,
+          62,
+          114
+        ],
+        [
+          487,
+          763,
+          46,
+          82
+        ]
+      ],
+      "source_image": "relative_position/sa_33280.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0170",
+    "images": [
+      "vstar/relative_position/sa_4137.jpg"
+    ],
+    "problem": "<image>\nIs the red backpack on the left or right side of the clock?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "red backpack",
+        "clock"
+      ],
+      "bboxes_xywh": [
+        [
+          1922,
+          1011,
+          64,
+          77
+        ],
+        [
+          1035,
+          692,
+          71,
+          62
+        ]
+      ],
+      "source_image": "relative_position/sa_4137.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0175",
+    "images": [
+      "vstar/relative_position/sa_40977.jpg"
+    ],
+    "problem": "<image>\nIs the vehicle on the left or right side of the blue umbrella?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "vehicle",
+        "blue umbrella"
+      ],
+      "bboxes_xywh": [
+        [
+          627,
+          707,
+          41,
+          18
+        ],
+        [
+          989,
+          806,
+          23,
+          27
+        ]
+      ],
+      "source_image": "relative_position/sa_40977.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0182",
+    "images": [
+      "vstar/relative_position/sa_24464.jpg"
+    ],
+    "problem": "<image>\nIs the woman with a backpack on the left or right side of the person with a beanie?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "B",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "woman with a backpack",
+        "person with a beanie"
+      ],
+      "bboxes_xywh": [
+        [
+          1151,
+          1305,
+          28,
+          29
+        ],
+        [
+          1938,
+          1275,
+          26,
+          35
+        ]
+      ],
+      "source_image": "relative_position/sa_24464.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0187",
+    "images": [
+      "vstar/relative_position/sa_41869.jpg"
+    ],
+    "problem": "<image>\nIs the cyclist on the left or right side of the sculpture?\n(A) right\n(B) left\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "cyclist"
+      ],
+      "bboxes_xywh": [
+        [
+          1396,
+          879,
+          23,
+          45
+        ]
+      ],
+      "source_image": "relative_position/sa_41869.jpg"
+    }
+  },
+  {
+    "doc_id": "vstar_0190",
+    "images": [
+      "vstar/relative_position/sa_6183.jpg"
+    ],
+    "problem": "<image>\nIs the motorcycle on the left or right side of the dog?\n(A) left\n(B) right\nAnswer with the option's letter from the given choices directly.",
+    "solution": "A",
+    "data_source": "vstar_relative_position",
+    "evidence": {
+      "target_objects": [
+        "dog",
+        "motorcycle"
+      ],
+      "bboxes_xywh": [
+        [
+          1455,
+          1302,
+          117,
+          77
+        ],
+        [
+          684,
+          945,
+          150,
+          110
+        ]
+      ],
+      "source_image": "relative_position/sa_6183.jpg"
+    }
+  }
+]
