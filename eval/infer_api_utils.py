@@ -222,6 +222,12 @@ def _process_skill(args, query_text, retrieved_exps, images, llm_client, sample_
     try:
         with open(args.skill_library, 'r', encoding='utf-8') as f:
             base_skill = f.read()
+        pairlift_library = getattr(args, 'pairlift_library', None)
+        if pairlift_library:
+            with open(pairlift_library, 'r', encoding='utf-8') as f:
+                pairlift_skill = f.read().strip()
+            if pairlift_skill:
+                base_skill = f"{base_skill.rstrip()}\n\n{pairlift_skill}\n"
         
         use_adaptation = getattr(args, 'skill_adaptation', True)  # Default: adapt
         
@@ -913,4 +919,3 @@ def execute_pipeline_parallel_processing(
                             )
 
         pbar.close()
-

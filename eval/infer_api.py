@@ -856,6 +856,8 @@ if __name__ == "__main__":
                        help="Enable dynamic skill generation")
     parser.add_argument("--skill-library", type=str, default=None, 
                        help="Path to the global skill library (SKILL.md)")
+    parser.add_argument("--pairlift-library", type=str, default=None,
+                       help="Optional PairLift skill document appended to the base skill")
     parser.add_argument("--skill-inference", action='store_true', 
                        help="Enable skill injection during inference")
     parser.add_argument("--no-skill-adaptation", action='store_false', dest='skill_adaptation',
