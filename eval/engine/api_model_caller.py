@@ -111,7 +111,7 @@ def create_model_caller(args, sampling_params, save_dir=None):
     else:
         print(f"[Function Calling] Disabled (ENABLE_FUNCTION_CALLING={enable_fc})")
     
-    def model_caller(node: SearchNode):
+    def model_caller(node: SearchNode, allow_tools: bool = True):
         """
         Call the vision API and process the response (text or function call).
         
@@ -124,13 +124,20 @@ def create_model_caller(args, sampling_params, save_dir=None):
         try:
             # Use the node's API conversation history
             messages = node.api_conversation_history.copy()
+            active_tools_schema = tools_schema if allow_tools else None
+            if not allow_tools:
+                messages.append({
+                    "role": "user",
+                    "content": "The tool budget is exhausted. Do not request another tool. Use the collected visual evidence and provide the final answer now inside <answer>...</answer> tags."
+                })
 
             # Call the model once per step to obtain assistant text
             max_retries = 3
             response = None
             for attempt in range(max_retries):
-                # Pass tools for function calling
-                response = call_vision_api(args.model_name, messages, sampling_params, tools=tools_schema)
+                response = call_vision_api(
+                    args.model_name, messages, sampling_params, tools=active_tools_schema
+                )
 
                 # Check if response is an error string
                 if isinstance(response, str) and response.startswith("Error:"):
@@ -259,6 +266,10 @@ def create_model_caller(args, sampling_params, save_dir=None):
             action, data = parse_function_call_response(response, text_content=response_text)
             
             if action == "function_call" or action == "tool_call":
+                if not allow_tools:
+                    node.budget_violation = True
+                    node.current_turn += 1
+                    return "Error: Tool call exceeded the configured budget."
                 # Handle function calls using unified tool handler
                 tool_name = data.get("tool_name", "")
                 parameters = data.get("parameters", {})

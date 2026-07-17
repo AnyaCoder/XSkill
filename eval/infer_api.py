@@ -819,7 +819,7 @@ if __name__ == "__main__":
     parser.add_argument("--inference-prompts-path", type=str, default="eval/prompts/inference_prompts.yaml", 
                        help="Path to the inference prompts YAML file.")
     parser.add_argument("--system-prompt-key", type=str, default="multi_tool_agent_search", 
-                       choices=['direct_cot', 'agent_zoom', 'multi_tool_agent', 'multi_tool_agent_search', 'multi_tool_agent_code'], 
+                       choices=['direct_cot', 'agent_zoom', 'pair_agent_zoom', 'multi_tool_agent', 'multi_tool_agent_search', 'multi_tool_agent_code'],
                        help="The key for the system prompt to use from the inference prompts YAML file.")
     
     # Tool Arguments
@@ -829,6 +829,10 @@ if __name__ == "__main__":
                        help="Maximum number of image_search tool calls per sample (default: 3)")
     parser.add_argument("--web-search-max-calls", type=int, default=5,
                        help="Maximum number of web_search tool calls per sample (default: 5)")
+    parser.add_argument("--budget-gate", action='store_true',
+                       help="Enable evidence-gated inference with a hard tool-turn budget")
+    parser.add_argument("--max-tool-turns", type=int, default=1,
+                       help="Maximum tool-using model turns when --budget-gate is enabled (default: 1)")
 
     # Experience Arguments
     parser.add_argument("--experience-enable", action='store_true', 

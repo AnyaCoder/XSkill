@@ -129,3 +129,4 @@ system_prompts:
     - Do not use web search or external knowledge.
     - Do not call multiple tools in one turn.
     - Do not continue searching after sufficient paired evidence is available.
+    - After a zoom result is returned, tools are disabled; use the collected evidence and answer immediately.

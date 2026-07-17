@@ -14,6 +14,7 @@ from utils.llm_judger import compute_score
 from utils.result_utils import save_trajectory
 from search.tree import SearchNode
 from engine.api_model_caller import create_model_caller
+from utils.budget_gate import BudgetState
 
 SYSTEM_PROMPT = ""
 
@@ -290,8 +291,13 @@ def _run_greedy_loop(current_node, model_caller, args, sampling_params, question
         SearchNode: Final node after greedy inference
     """
     final_answer = None
+    budget = BudgetState(
+        enabled=getattr(args, "budget_gate", False),
+        max_tool_turns=max(0, getattr(args, "max_tool_turns", 1)),
+        configured_max_turns=args.max_turns,
+    )
     
-    for turn in range(args.max_turns):
+    for turn in range(budget.max_model_turns):
         # Check termination conditions
         if len(current_node.image_map) >= args.max_images:
             current_node.mark_final("Error: Reached max image limit.")
@@ -303,7 +309,8 @@ def _run_greedy_loop(current_node, model_caller, args, sampling_params, question
         
         # Call model
         try:
-            response_text = model_caller(current_node)
+            response_text = model_caller(current_node, allow_tools=budget.allow_tools)
+            budget.record_model_call()
         except Exception as e:
             print(f"Error calling model at turn {turn}: {e}")
             import traceback
@@ -320,6 +327,8 @@ def _run_greedy_loop(current_node, model_caller, args, sampling_params, question
         
         # Check if response is an error string from API
         if isinstance(response_text, str) and response_text.startswith("Error:"):
+            if getattr(current_node, "budget_violation", False):
+                budget.record_violation()
             error_msg = response_text
             print(f"Warning: {error_msg} at turn {turn}")
             current_node.mark_final(error_msg)
@@ -357,6 +366,7 @@ def _run_greedy_loop(current_node, model_caller, args, sampling_params, question
         
         # If a tool call was executed, continue loop to get model's text response based on tool results
         if tool_call_executed:
+            budget.record_tool_call()
             # Tool call was executed by model_caller, continue to get model's text response
             continue
         
@@ -379,6 +389,10 @@ def _run_greedy_loop(current_node, model_caller, args, sampling_params, question
     else:
         final_answer = "Error: Reached max turns without a definitive answer."
         current_node.mark_final(final_answer)
+
+    if getattr(current_node, "budget_violation", False):
+        budget.record_violation()
+    current_node.budget_metrics = budget.metrics()
     
     return current_node
 
@@ -428,6 +442,9 @@ def _process_single_sample_unified(sample, args, sampling_params):
         question_id, question_text, final_answer, ground_truth, conversation_history,
         accuracy_score, trajectory_text, trajectory_score, trajectory_analysis
     )
+    result.update(getattr(final_node, "budget_metrics", {}))
+    result["data_source"] = sample.get("data_source")
+    result["task_signature"] = sample.get("task_signature")
     
     return result
 
